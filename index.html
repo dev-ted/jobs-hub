@@ -7,6 +7,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
                 integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
                 crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -19,7 +23,7 @@
 
 <body>
 
-        <header class="header">
+        <header class="header animate__animated animate__fadeInDown">
                 <div class="header__container">
 
                         <a class="header__container__logo" href="index.html">Jobs Hub</a>
@@ -36,7 +40,7 @@
                 </div>
         </header>
 
-        <div class="hero">
+        <div class="hero animate__animated animate__fadeInDown">
                 <div class="hero__container">
 
 
@@ -59,54 +63,36 @@
                 </div>
         </div>
 
-        <div class="jobs">
-                <h3 class="jobs__results__count">
-                        showing 125 jobs
-                </h3>
+        <div class="jobs animate__animated animate__fadeInUp animate__delay-1s ">
+                <h5 class="jobs__results__count">
+                        <span></span>
+                </h5>
                 <div class="jobs__container">
                         <div class="jobs__container__card">
                                 <div class="jobs__container__card__top">
-                                        <h4 class="jobs__container__card__company"> company </h4>
+                                        <img src="data:image/png;base64,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"
+                                                alt="" class="jobs__container__card__img">
                                         <i class="fa fa-ellipsis-v"></i>
                                 </div>
                                 <div class="jobs__container__card__role">
                                         <span>Programmer</span>
                                 </div>
-                                 <div class="jobs__container__card__info">
-                                        
-                                        <span> <i class="fa fa-calendar-alt"> </i> 23 jan 20221</span>
-                                        <span> <i class="fa fa-map-marker-alt"></i> location</span>
-                                </div>
-                                
-
                                 <div class="jobs__container__card__description">
                                         <p>
-                                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid,
-                                                provident.
+                                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, provident.
 
 
                                         </p>
                                 </div>
                                 <div class="jobs__container__card__cta">
-                                        <a href="#" class="jobs__container__card__cta__link">Apply Now</a>
+                                        <a href="#" target="_blank" class="jobs__container__card__cta__link">Apply Now</a>
                                 </div>
-
-
-                        </div>
-                        <div class="jobs__container__card">
-                                job 1
-
-                        </div>
-                        <div class="jobs__container__card">
-                                job 1
-
-                        </div>
-                        <div class="jobs__container__card">
-                                job 1
-
-                        </div>
+                       
 
                 </div>
+               
+
+        </div>
 
         </div>
 

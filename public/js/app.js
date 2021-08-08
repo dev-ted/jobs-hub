@@ -54,7 +54,7 @@ searchButton.addEventListener("click", (e) => {
 //get jobs
 
 function getJobs() {
-  return fetch("../data/data.json")
+  return fetch("data/data.json")
     .then((res) => res.json())
     .then((jobs) => {
       return jobs;

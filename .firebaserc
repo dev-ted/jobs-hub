@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "devted-clones"
+  },
+  "targets": {
+    "devted-clones": {
+      "hosting": {
+        "jobs-hub": [
+          "jobs-hub"
+        ]
+      }
+    }
+  }
+}

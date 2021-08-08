@@ -14,8 +14,6 @@ const searchButton = document.querySelector(".hero__container__searchButton");
 
 let jobsCon = document.querySelector(".jobs__container");
 
-
-
 let isOPen = false;
 
 menu_icon.addEventListener("click", () => {
@@ -50,7 +48,6 @@ searchButton.addEventListener("click", (e) => {
   getJobs().then((jobs) => {
     let filteredData = searchJobs(jobs, text);
     showJobs(filteredData);
-    
   });
 });
 
@@ -71,8 +68,9 @@ function searchJobs(jobs, searchText) {
       if (
         job.roleName.toLowerCase().includes(searchText.toLowerCase()) ||
         job.company.toLowerCase().includes(searchText.toLowerCase()) ||
-        job.requirements.content.toLowerCase().includes(searchText.toLowerCase())
-        ||
+        job.requirements.content
+          .toLowerCase()
+          .includes(searchText.toLowerCase()) ||
         job.type.toLowerCase().includes(searchText.toLowerCase()) ||
         job.location.toLowerCase().includes(searchText.toLowerCase())
       ) {
@@ -82,8 +80,7 @@ function searchJobs(jobs, searchText) {
       }
     });
     return searchData;
-  } else
-  {
+  } else {
     return jobs;
   }
 }
@@ -94,7 +91,6 @@ function showJobs(jobs) {
   let dataCount = " ";
   let dataHtml = " ";
   dataCount += `<span>Showing  ${jobs.length} jobs</span>`;
- 
 
   jobs.forEach((job) => {
     dataHtml += `  <div class="jobs__container__card">
@@ -120,7 +116,7 @@ function showJobs(jobs) {
 
                 </div>`;
   });
- jobsCount.innerHTML = dataCount;
+  jobsCount.innerHTML = dataCount;
   jobsCon.innerHTML = dataHtml;
 }
 

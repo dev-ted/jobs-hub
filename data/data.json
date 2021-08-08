@@ -1,22 +1,22 @@
 [
   {
     "id": 1,
-    "company": "TekStrea",
-    "logo": "https://pbs.twimg.com/profile_images/1871386426/TSIconButtonSM_400x400.png",
-    "roleName": "Pega Developer - 100% Remote",
+   "company": "Procter & Gamble ",
+    "logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQHadxuyf9RhdA/company-logo_100_100/0/1624365567580?e=1636588800&v=beta&t=kk6nofkTa6XYZ6lp0n021DFWBikkKwPeLX8ce21MmlQ",
+    "roleName": "Production Technician Intern",
     "postedTime": "5h ago",
     "type": "Full Time",
-    "location": "United States",
-    "website": "https://linkedin.com/TekStrea",
-    "applicationLink": "https://linkedin.com/TekStrea/apply",
+    "location": "South Africa, Johannesburg",
+    "website": "https://www.pgcareers.com/",
+    "applicationLink": "https://www.pgcareers.com/job/johannesburg/production-technician-internship/936/10593896160?source=RS_LINKEDIN",
     "requirements": {
-      "intro": "A TekStrea client, a healthcare technology company, has an immediate need for a Pega Developer for a remote long term contract.  We're looking for an experienced developer to support defects, issues and development.",
-      "content": "The ideal candidate is as passionate about solving challenges through technology.",
+      "intro": "We have got an exciting manufacturing internship opportunity at our plant in Spartan.",
+      "content": "We are seeking interns who can work on a full-time basis where they will be given all the necessary tools to build their capabilities..",
       "items": [
-        "Needs to be experienced in the PEGA platform on at least 7.22 with PEGA 8.x preferred.",
-        "Pega Marketing or Pega Customer Decision Hub certification (for developers).",
-        "Blues experience highly preferred, Healthcare experience required.",
-        "Must be USA based and open to work standard business hours of 8-5pm ET."
+        "Operate machinery, load raw materials and monitor the process.",
+        "Daily machine and area maintenance.",
+        "Recording and communicating of machine/area breakdowns.",
+        "Ensure quality output of production."
       ]
     }
   },

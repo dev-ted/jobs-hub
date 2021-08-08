@@ -10,13 +10,13 @@ const cta_register = document.querySelector(
   ".header__container__cta__register__button"
 );
 const jobsCount = document.querySelector(".jobs__results__count");
+const searchButton = document.querySelector(".hero__container__searchButton");
 
 let jobsCon = document.querySelector(".jobs__container");
-let dataHtml = " ";
-let dataCount = " ";
+
+
 
 let isOPen = false;
-
 
 menu_icon.addEventListener("click", () => {
   if (!isOPen) {
@@ -44,32 +44,60 @@ window.onscroll = () => {
   }
 };
 
+searchButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  let text = document.getElementById("input").value;
+  getJobs().then((jobs) => {
+    let filteredData = searchJobs(jobs, text);
+    showJobs(filteredData);
+    
+  });
+});
+
 //get jobs
 
 function getJobs() {
-       return fetch(
-         "../data/data.json"
-       )
-         .then((res) => res.json())
-         .then((jobs) => {
-           console.log(jobs);
-           return jobs;
-         })
-         .catch((err) => console.log(err));
-        
+  return fetch("../data/data.json")
+    .then((res) => res.json())
+    .then((jobs) => {
+      return jobs;
+    })
+    .catch((err) => console.log(err));
+}
+
+function searchJobs(jobs, searchText) {
+  if (searchText) {
+    let searchData = jobs.filter((job) => {
+      if (
+        job.roleName.toLowerCase().includes(searchText.toLowerCase()) ||
+        job.company.toLowerCase().includes(searchText.toLowerCase()) ||
+        job.requirements.content.toLowerCase().includes(searchText.toLowerCase())
+        ||
+        job.type.toLowerCase().includes(searchText.toLowerCase()) ||
+        job.location.toLowerCase().includes(searchText.toLowerCase())
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+    return searchData;
+  } else
+  {
+    return jobs;
+  }
 }
 
 //show jobs
 
 function showJobs(jobs) {
-        console.log(jobs);
-        dataCount += `<span>Showing  ${jobs.length} jobs</span>`;
-        jobsCount.innerHTML = dataCount;
+  let dataCount = " ";
+  let dataHtml = " ";
+  dataCount += `<span>Showing  ${jobs.length} jobs</span>`;
+ 
 
-        jobs.forEach(job => {
-                console.log("jobs>>>>", job.company);
-                
-                dataHtml += `  <div class="jobs__container__card">
+  jobs.forEach((job) => {
+    dataHtml += `  <div class="jobs__container__card">
                                 <div class="jobs__container__card__top">
                                         <img src="${job.logo}"
                                                 alt="" class="jobs__container__card__img">
@@ -91,16 +119,12 @@ function showJobs(jobs) {
                        
 
                 </div>`;
-        })
-
-        jobsCon.innerHTML = dataHtml;
-        
-        
+  });
+ jobsCount.innerHTML = dataCount;
+  jobsCon.innerHTML = dataHtml;
 }
 
-
-
 //call funcs
-getJobs().then(jobsData => {
-        showJobs(jobsData);
+getJobs().then((jobsData) => {
+  showJobs(jobsData);
 });
